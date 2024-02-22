@@ -12,10 +12,4 @@ class _$InjectorConfig extends InjectorConfig {
     final KiwiContainer container = KiwiContainer();
     container.registerSingleton((c) => SnackbarBloc());
   }
-
-  @override
-  void _configureCommon() {
-    final KiwiContainer container = KiwiContainer();
-    container.registerFactory((c) => ScreenUtils());
-  }
 }

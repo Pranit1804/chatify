@@ -2,9 +2,15 @@ import 'package:chatify/common/theme/new_theme/color_theme/custom_color_theme_ex
 import 'package:chatify/common/theme/new_theme/color_theme/default_color_themes.dart';
 
 CustomColorTheme lightColorThemeExtension = const CustomColorTheme(
-  homeBackground: NewAppColor.primaryColorLight,
+  homeBackground: AppColor.linkWater,
+  primaryButtonColor: AppColor.lightPrimaryButtonColor,
+  reverseTextColor: AppColor.snowDriftText,
+  icon1: AppColor.ravenText,
 );
 
 CustomColorTheme darkColorThemeExtension = const CustomColorTheme(
-  homeBackground: NewAppColor.primaryColorLight,
+  homeBackground: AppColor.cinder,
+  primaryButtonColor: AppColor.darkPrimaryButtonColor,
+  reverseTextColor: AppColor.ravenText,
+  icon1: AppColor.snowDriftText,
 );

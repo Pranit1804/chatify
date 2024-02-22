@@ -1,3 +1,5 @@
+import 'package:chatify/common/theme/new_theme/color_theme/custom_color_theme_extension.dart';
+import 'package:chatify/common/theme/new_theme/text_theme/custom_text_theme_extension.dart';
 import 'package:chatify/routes/routes_constant.dart';
 import 'package:flutter/material.dart';
 
@@ -13,7 +15,7 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     super.initState();
     // _setUp();
-    Future.delayed(const Duration(milliseconds: 400), () {
+    Future.delayed(const Duration(milliseconds: 2000), () {
       Navigator.of(context).pushNamedAndRemoveUntil(
         getInitialRoute(),
         (_) => false,
@@ -22,13 +24,20 @@ class _SplashScreenState extends State<SplashScreen> {
   }
 
   String getInitialRoute() {
-    return RoutesConstants.login;
+    return RoutesConstants.onboarding;
   }
 
   @override
   Widget build(BuildContext context) {
-    return const Center(
-      child: Text('Chatify'),
+    return Scaffold(
+      backgroundColor:
+          Theme.of(context).extension<CustomColorTheme>()!.homeBackground,
+      body: Center(
+        child: Text(
+          'Chatify',
+          style: Theme.of(context).extension<CustomTextTheme>()!.display2XLR,
+        ),
+      ),
     );
   }
 }

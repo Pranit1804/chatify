@@ -1,4 +1,3 @@
-import 'package:chatify/common/utils/screen_utils.dart';
 import 'package:chatify/modules/snackbar/bloc/snackbar_bloc.dart';
 import 'package:kiwi/kiwi.dart';
 
@@ -13,23 +12,18 @@ abstract class InjectorConfig {
     injector._configure();
   }
 
+  static final resolve = container.resolve;
+
   void _configure() {
     _configureBlocs();
     // _configureUseCases();
     // _configureRepositories();
     // _configureRemoteDataSources();
     // _configureLocalDataSource();
-    _configureCommon();
     // _configureOther();
   }
-
-  static final resolve = container.resolve;
 
   /// =========== Register Blocs/Cubits ===================
   @Register.singleton(SnackbarBloc)
   void _configureBlocs();
-
-  /// =========== Register Commons ===================
-  @Register.factory(ScreenUtils)
-  void _configureCommon();
 }

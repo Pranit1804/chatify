@@ -4,246 +4,246 @@ import 'package:chatify/common/theme/new_theme/text_theme/default_text_themes.da
 
 CustomTextTheme lightTextThemeExtension = CustomTextTheme(
   displaySuper: NewAppTextTheme.displaySuper.copyWith(
-    color: NewAppColor.primaryColorLight,
+    color: AppColor.primaryColorLight,
   ),
   displayLabel: NewAppTextTheme.displayLabel.copyWith(
-    color: NewAppColor.ravenText,
+    color: AppColor.ravenText,
   ),
   display3XLSB: NewAppTextTheme.display3XLSB.copyWith(
-    color: NewAppColor.ravenText,
+    color: AppColor.ravenText,
   ),
   display3XLR: NewAppTextTheme.display3XLR.copyWith(
-    color: NewAppColor.ravenText,
+    color: AppColor.ravenText,
   ),
   display2XLSB: NewAppTextTheme.display2XLSB.copyWith(
-    color: NewAppColor.ravenText,
+    color: AppColor.ravenText,
   ),
   display2XLR: NewAppTextTheme.display2XLR.copyWith(
-    color: NewAppColor.ravenText,
+    color: AppColor.ravenText,
   ),
   displayXLSB: NewAppTextTheme.displayXLSB.copyWith(
-    color: NewAppColor.ravenText,
+    color: AppColor.ravenText,
   ),
   displayXLR: NewAppTextTheme.displayXLR.copyWith(
-    color: NewAppColor.ravenText,
+    color: AppColor.ravenText,
   ),
   displayLSB: NewAppTextTheme.displayLSB.copyWith(
-    color: NewAppColor.ravenText,
+    color: AppColor.ravenText,
   ),
   displayLR: NewAppTextTheme.displayLR.copyWith(
-    color: NewAppColor.ravenText,
+    color: AppColor.ravenText,
   ),
   displayMSB: NewAppTextTheme.displayMSB.copyWith(
-    color: NewAppColor.ravenText,
+    color: AppColor.ravenText,
   ),
   displayMR: NewAppTextTheme.displayMR.copyWith(
-    color: NewAppColor.ravenText,
+    color: AppColor.ravenText,
   ),
   displaySSB: NewAppTextTheme.displaySSB.copyWith(
-    color: NewAppColor.ravenText,
+    color: AppColor.ravenText,
   ),
   displaySR: NewAppTextTheme.displaySR.copyWith(
-    color: NewAppColor.ravenText,
+    color: AppColor.ravenText,
   ),
   displayXSSB: NewAppTextTheme.displayXSSB.copyWith(
-    color: NewAppColor.ravenText,
+    color: AppColor.ravenText,
   ),
   displayXSR: NewAppTextTheme.displayXSR.copyWith(
-    color: NewAppColor.ravenText,
+    color: AppColor.ravenText,
   ),
   display2XSSB: NewAppTextTheme.display2XSSB.copyWith(
-    color: NewAppColor.ravenText,
+    color: AppColor.ravenText,
   ),
   display2XSR: NewAppTextTheme.display2XSR.copyWith(
-    color: NewAppColor.ravenText,
+    color: AppColor.ravenText,
   ),
   display3XSSB: NewAppTextTheme.display3XSSB.copyWith(
-    color: NewAppColor.ravenText,
+    color: AppColor.ravenText,
   ),
   display3XSR: NewAppTextTheme.display3XSR.copyWith(
-    color: NewAppColor.ravenText,
+    color: AppColor.ravenText,
   ),
   summary: NewAppTextTheme.summary.copyWith(
-    color: NewAppColor.ravenText,
+    color: AppColor.ravenText,
   ),
   heading1: NewAppTextTheme.heading1.copyWith(
-    color: NewAppColor.ravenText,
+    color: AppColor.ravenText,
   ),
   heading1C: NewAppTextTheme.heading1.copyWith(
-    color: NewAppColor.ravenText,
+    color: AppColor.ravenText,
   ),
   heading2R: NewAppTextTheme.heading2r.copyWith(
-    color: NewAppColor.ravenText,
+    color: AppColor.ravenText,
   ),
   heading2M: NewAppTextTheme.heading2m.copyWith(
-    color: NewAppColor.ravenText,
+    color: AppColor.ravenText,
   ),
   heading2B: NewAppTextTheme.heading2b.copyWith(
-    color: NewAppColor.ravenText,
+    color: AppColor.ravenText,
   ),
   bodyXLR: NewAppTextTheme.bodyXLr.copyWith(
-    color: NewAppColor.ravenText,
+    color: AppColor.ravenText,
   ),
   bodyXLM: NewAppTextTheme.bodyXLm.copyWith(
-    color: NewAppColor.ravenText,
+    color: AppColor.ravenText,
   ),
   bodyXLB: NewAppTextTheme.bodyXLb.copyWith(
-    color: NewAppColor.ravenText,
+    color: AppColor.ravenText,
   ),
   bodyLR: NewAppTextTheme.bodyLr.copyWith(
-    color: NewAppColor.ravenText,
+    color: AppColor.ravenText,
   ),
   bodyLM: NewAppTextTheme.bodyLm.copyWith(
-    color: NewAppColor.ravenText,
+    color: AppColor.ravenText,
   ),
   bodyLB: NewAppTextTheme.bodyLb.copyWith(
-    color: NewAppColor.ravenText,
+    color: AppColor.ravenText,
   ),
   bodyMR: NewAppTextTheme.bodyMr.copyWith(
-    color: NewAppColor.ravenText,
+    color: AppColor.ravenText,
   ),
   bodyMM: NewAppTextTheme.bodyMm.copyWith(
-    color: NewAppColor.ravenText,
+    color: AppColor.ravenText,
   ),
   bodyMB: NewAppTextTheme.bodyMb.copyWith(
-    color: NewAppColor.ravenText,
+    color: AppColor.ravenText,
   ),
   bodySR: NewAppTextTheme.bodySr.copyWith(
-    color: NewAppColor.ravenText,
+    color: AppColor.ravenText,
   ),
   bodySM: NewAppTextTheme.bodySm.copyWith(
-    color: NewAppColor.ravenText,
+    color: AppColor.ravenText,
   ),
   bodySB: NewAppTextTheme.bodySb.copyWith(
-    color: NewAppColor.ravenText,
+    color: AppColor.ravenText,
   ),
   bodyXSR: NewAppTextTheme.bodyXSr.copyWith(
-    color: NewAppColor.ravenText,
+    color: AppColor.ravenText,
   ),
   bodyXSM: NewAppTextTheme.bodyXSm.copyWith(
-    color: NewAppColor.ravenText,
+    color: AppColor.ravenText,
   ),
 );
 
 CustomTextTheme darkTextThemeExtension = CustomTextTheme(
   displaySuper: NewAppTextTheme.displaySuper.copyWith(
-    color: NewAppColor.snowDriftText,
+    color: AppColor.snowDriftText,
   ),
   displayLabel: NewAppTextTheme.displayLabel.copyWith(
-    color: NewAppColor.snowDriftText,
+    color: AppColor.snowDriftText,
   ),
   display3XLSB: NewAppTextTheme.display3XLSB.copyWith(
-    color: NewAppColor.snowDriftText,
+    color: AppColor.snowDriftText,
   ),
   display3XLR: NewAppTextTheme.display3XLR.copyWith(
-    color: NewAppColor.snowDriftText,
+    color: AppColor.snowDriftText,
   ),
   display2XLSB: NewAppTextTheme.display2XLSB.copyWith(
-    color: NewAppColor.snowDriftText,
+    color: AppColor.snowDriftText,
   ),
   display2XLR: NewAppTextTheme.display2XLR.copyWith(
-    color: NewAppColor.snowDriftText,
+    color: AppColor.snowDriftText,
   ),
   displayXLSB: NewAppTextTheme.displayXLSB.copyWith(
-    color: NewAppColor.snowDriftText,
+    color: AppColor.snowDriftText,
   ),
   displayXLR: NewAppTextTheme.displayXLR.copyWith(
-    color: NewAppColor.snowDriftText,
+    color: AppColor.snowDriftText,
   ),
   displayLSB: NewAppTextTheme.displayLSB.copyWith(
-    color: NewAppColor.snowDriftText,
+    color: AppColor.snowDriftText,
   ),
   displayLR: NewAppTextTheme.displayLR.copyWith(
-    color: NewAppColor.snowDriftText,
+    color: AppColor.snowDriftText,
   ),
   displayMSB: NewAppTextTheme.displayMSB.copyWith(
-    color: NewAppColor.snowDriftText,
+    color: AppColor.snowDriftText,
   ),
   displayMR: NewAppTextTheme.displayMR.copyWith(
-    color: NewAppColor.snowDriftText,
+    color: AppColor.snowDriftText,
   ),
   displaySSB: NewAppTextTheme.displaySSB.copyWith(
-    color: NewAppColor.snowDriftText,
+    color: AppColor.snowDriftText,
   ),
   displaySR: NewAppTextTheme.displaySR.copyWith(
-    color: NewAppColor.snowDriftText,
+    color: AppColor.snowDriftText,
   ),
   displayXSSB: NewAppTextTheme.displayXSSB.copyWith(
-    color: NewAppColor.snowDriftText,
+    color: AppColor.snowDriftText,
   ),
   displayXSR: NewAppTextTheme.displayXSR.copyWith(
-    color: NewAppColor.snowDriftText,
+    color: AppColor.snowDriftText,
   ),
   display2XSSB: NewAppTextTheme.display2XSSB.copyWith(
-    color: NewAppColor.snowDriftText,
+    color: AppColor.snowDriftText,
   ),
   display2XSR: NewAppTextTheme.display2XSR.copyWith(
-    color: NewAppColor.snowDriftText,
+    color: AppColor.snowDriftText,
   ),
   display3XSSB: NewAppTextTheme.display3XSSB.copyWith(
-    color: NewAppColor.snowDriftText,
+    color: AppColor.snowDriftText,
   ),
   display3XSR: NewAppTextTheme.display3XSR.copyWith(
-    color: NewAppColor.snowDriftText,
+    color: AppColor.snowDriftText,
   ),
   summary: NewAppTextTheme.summary.copyWith(
-    color: NewAppColor.snowDriftText,
+    color: AppColor.snowDriftText,
   ),
   heading1: NewAppTextTheme.heading1.copyWith(
-    color: NewAppColor.snowDriftText,
+    color: AppColor.snowDriftText,
   ),
   heading1C: NewAppTextTheme.heading1.copyWith(
-    color: NewAppColor.snowDriftText,
+    color: AppColor.snowDriftText,
   ),
   heading2R: NewAppTextTheme.heading2r.copyWith(
-    color: NewAppColor.snowDriftText,
+    color: AppColor.snowDriftText,
   ),
   heading2M: NewAppTextTheme.heading2m.copyWith(
-    color: NewAppColor.snowDriftText,
+    color: AppColor.snowDriftText,
   ),
   heading2B: NewAppTextTheme.heading2b.copyWith(
-    color: NewAppColor.snowDriftText,
+    color: AppColor.snowDriftText,
   ),
   bodyXLR: NewAppTextTheme.bodyXLr.copyWith(
-    color: NewAppColor.snowDriftText,
+    color: AppColor.snowDriftText,
   ),
   bodyXLM: NewAppTextTheme.bodyXLm.copyWith(
-    color: NewAppColor.snowDriftText,
+    color: AppColor.snowDriftText,
   ),
   bodyXLB: NewAppTextTheme.bodyXLb.copyWith(
-    color: NewAppColor.snowDriftText,
+    color: AppColor.snowDriftText,
   ),
   bodyLR: NewAppTextTheme.bodyLr.copyWith(
-    color: NewAppColor.snowDriftText,
+    color: AppColor.snowDriftText,
   ),
   bodyLM: NewAppTextTheme.bodyLm.copyWith(
-    color: NewAppColor.snowDriftText,
+    color: AppColor.snowDriftText,
   ),
   bodyLB: NewAppTextTheme.bodyLb.copyWith(
-    color: NewAppColor.snowDriftText,
+    color: AppColor.snowDriftText,
   ),
   bodyMR: NewAppTextTheme.bodyMr.copyWith(
-    color: NewAppColor.snowDriftText,
+    color: AppColor.snowDriftText,
   ),
   bodyMM: NewAppTextTheme.bodyMm.copyWith(
-    color: NewAppColor.snowDriftText,
+    color: AppColor.snowDriftText,
   ),
   bodyMB: NewAppTextTheme.bodyMb.copyWith(
-    color: NewAppColor.snowDriftText,
+    color: AppColor.snowDriftText,
   ),
   bodySR: NewAppTextTheme.bodySr.copyWith(
-    color: NewAppColor.snowDriftText,
+    color: AppColor.snowDriftText,
   ),
   bodySM: NewAppTextTheme.bodySm.copyWith(
-    color: NewAppColor.snowDriftText,
+    color: AppColor.snowDriftText,
   ),
   bodySB: NewAppTextTheme.bodySb.copyWith(
-    color: NewAppColor.snowDriftText,
+    color: AppColor.snowDriftText,
   ),
   bodyXSR: NewAppTextTheme.bodyXSr.copyWith(
-    color: NewAppColor.snowDriftText,
+    color: AppColor.snowDriftText,
   ),
   bodyXSM: NewAppTextTheme.bodyXSm.copyWith(
-    color: NewAppColor.snowDriftText,
+    color: AppColor.snowDriftText,
   ),
 );
