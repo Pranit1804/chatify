@@ -1,0 +1,3 @@
+class LaunchConstants {
+  LaunchConstants._();
+}

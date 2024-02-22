@@ -1,4 +1,5 @@
 import 'package:chatify/common/utils/screen_utils.dart';
+import 'package:chatify/modules/snackbar/bloc/snackbar_bloc.dart';
 import 'package:kiwi/kiwi.dart';
 
 part 'injector_config.g.dart';
@@ -13,7 +14,7 @@ abstract class InjectorConfig {
   }
 
   void _configure() {
-    // _configureBlocs();
+    _configureBlocs();
     // _configureUseCases();
     // _configureRepositories();
     // _configureRemoteDataSources();
@@ -24,6 +25,11 @@ abstract class InjectorConfig {
 
   static final resolve = container.resolve;
 
+  /// =========== Register Blocs/Cubits ===================
+  @Register.singleton(SnackbarBloc)
+  void _configureBlocs();
+
+  /// =========== Register Commons ===================
   @Register.factory(ScreenUtils)
   void _configureCommon();
 }
