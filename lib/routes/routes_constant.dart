@@ -1,0 +1,3 @@
+class RoutesConstants {
+  RoutesConstants._();
+}
