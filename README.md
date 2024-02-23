@@ -3,4 +3,4 @@
 ```sh
 fvm flutter packages pub run build_runner build --delete-conflicting-outputs 
 ```
-Note: `--delete-conflicting-outputs` is optional to override the conflicts in the graph.# chatify
+Note: `--delete-conflicting-outputs` is optional to override the conflicts in the graph.# 

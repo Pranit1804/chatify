@@ -3,7 +3,10 @@ import 'package:chatify/common/extensions/screen_utils_extensions.dart';
 import 'package:chatify/common/theme/new_theme/color_theme/custom_color_theme_extension.dart';
 import 'package:chatify/common/theme/new_theme/color_theme/default_color_themes.dart';
 import 'package:chatify/common/theme/new_theme/text_theme/custom_text_theme_extension.dart';
+import 'package:chatify/di/injector.dart';
 import 'package:chatify/modules/auth/auth_constants.dart';
+import 'package:chatify/modules/auth/bloc/auth_bloc.dart';
+import 'package:chatify/modules/auth/data/models/user_request_model.dart';
 import 'package:chatify/widgets/common_text_field.dart';
 import 'package:chatify/widgets/pop_button.dart';
 import 'package:chatify/widgets/primary_button.dart';
@@ -21,6 +24,13 @@ class _SignUpState extends State<SignUp> {
   final TextEditingController _emailTextController = TextEditingController();
   final TextEditingController _passwordTextController = TextEditingController();
   String errorText = '';
+  late AuthBloc _authBloc;
+
+  @override
+  void initState() {
+    super.initState();
+    _authBloc = Injector.resolve<AuthBloc>();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -74,6 +84,11 @@ class _SignUpState extends State<SignUp> {
 
   void onCreateTapped() {
     if (_validateAllFields()) {
+      _authBloc.add(SignupUserEvent(UserRequestModel(
+        username: _nameTextController.text,
+        email: _emailTextController.text,
+        password: _passwordTextController.text,
+      )));
     } else {
       setState(() {
         errorText = 'Please Enter All Fields';

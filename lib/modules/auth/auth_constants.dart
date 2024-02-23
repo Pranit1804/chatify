@@ -15,4 +15,9 @@ class AuthConstants {
   static const loginChatify = 'Log in to Chatbox';
   static const login = 'Login';
   static const loginDesc = 'Welcome back! Sign in using email to continue us';
+  static const weakPassword = 'weak-password';
+  static const passwordError = 'The password provided is too weak.';
+  static const emailAlreadyUsed = 'email-already-in-use';
+  static const emailAlreadyUsedError =
+      'The account already exists for that email.';
 }
