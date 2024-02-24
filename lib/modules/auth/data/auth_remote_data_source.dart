@@ -15,18 +15,26 @@ class AuthRemoteDataSource {
   }
 
   Future<UserCredential> signupUser(UserRequestModel userRequestModel) async {
-    return await FirebaseAuth.instance.createUserWithEmailAndPassword(
+    UserCredential userCredential =
+        await FirebaseAuth.instance.createUserWithEmailAndPassword(
       email: userRequestModel.email,
       password: userRequestModel.password,
     );
+
+    return userCredential;
   }
 
-  Future<UserEntity> createUser(UserCredential userCredential) async {
-    _users.add(UserEntity(
-      id: userCredential.user!.uid,
-      username: 'Pranit',
-      inviteCode: "as134a",
-    ));
-    return UserEntity(id: "123", username: "asdaf", inviteCode: "213123");
+  Future<void> createUser(UserEntity user) async {
+    await _users.doc(user.userId).set(user);
+  }
+
+  Future<UserEntity> login(UserRequestModel requestModel) async {
+    final credential = await FirebaseAuth.instance.signInWithEmailAndPassword(
+        email: requestModel.email, password: requestModel.password);
+
+    DocumentSnapshot<Object?> ref =
+        await _users.doc(credential.user!.uid).get();
+
+    return ref.data() as UserEntity;
   }
 }

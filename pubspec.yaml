@@ -17,6 +17,9 @@ dependencies:
   firebase_auth: ^4.6.3
   firebase_core: ^2.4.1
   cloud_firestore: ^4.9.0
+  objectbox: ^2.3.1
+  objectbox_flutter_libs: ^2.3.1
+  path_provider: ^2.0.14
 
 dev_dependencies:
   flutter_test:
@@ -25,12 +28,14 @@ dev_dependencies:
   flutter_lints: ^2.0.0
   build_runner: ^2.1.5
   kiwi_generator: ^4.0.1
+  objectbox_generator: ^2.3.1
 
 flutter:
   uses-material-design: true
   assets:
     - assets/
     - assets/svg/
+    - assets/gif/
 
   fonts:
     - family: RedHatText

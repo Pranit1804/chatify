@@ -20,6 +20,7 @@ Future<void> _processSnackbarState(
   GlobalKey<NavigatorState> navigatorStateGlobalKey,
 ) async {
   if (state is ShowSnackbarState) {
-    Snackbar.build(state.type, state.title, state.message);
+    ScaffoldMessenger.of(context)
+        .showSnackBar(Snackbar.build(state.type, state.title, state.message));
   }
 }

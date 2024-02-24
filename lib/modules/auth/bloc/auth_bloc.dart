@@ -20,6 +20,24 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
         _snackbarBloc = snackbarBloc,
         super(AuthInitialState()) {
     on<SignupUserEvent>(_onSignupUserEvent);
+    on<LoginUserEvent>(_onLoginUserEvent);
+  }
+
+  void _onLoginUserEvent(LoginUserEvent event, Emitter emit) async {
+    try {
+      UserEntity user = await _authUseCase.login(event.userRequestModel);
+      emit(LoginUserSuccessState(user));
+    } on FirebaseAuthException catch (e) {
+      if (e.code == AuthConstants.userNotFound) {
+        _snackbarBloc
+            .add(ShowSnackbarEvent.forError(AuthConstants.noUserFound));
+      } else if (e.code == AuthConstants.wrongPassword) {
+        _snackbarBloc
+            .add(ShowSnackbarEvent.forError(AuthConstants.wrongPasswordError));
+      }
+    } catch (e) {
+      _snackbarBloc.add(ShowSnackbarEvent.forSomethingWentWrong());
+    }
   }
 
   void _onSignupUserEvent(SignupUserEvent event, Emitter emit) async {

@@ -1,12 +1,12 @@
 import 'package:chatify/common/constants/json_key_constants.dart';
 
 class UserRequestModel {
-  final String username;
+  final String? username;
   final String email;
   final String password;
 
   UserRequestModel({
-    required this.username,
+    this.username,
     required this.email,
     required this.password,
   });

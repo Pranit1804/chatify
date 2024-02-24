@@ -9,12 +9,14 @@ class PrimaryButton extends StatefulWidget {
   final String text;
   final TextStyle? textStyle;
   final VoidCallback onTap;
+  final bool isLoadingState;
   const PrimaryButton({
     super.key,
     this.backgroundColor,
     required this.text,
     required this.onTap,
     this.textStyle,
+    this.isLoadingState = false,
   });
 
   @override
@@ -37,11 +39,19 @@ class _PrimaryButtonState extends State<PrimaryButton> {
                   .primaryButtonColor,
           borderRadius: BorderRadius.circular(LayoutConstants.dimen_16),
         ),
-        child: Text(
-          widget.text,
-          style: widget.textStyle ??
-              Theme.of(context).extension<CustomTextTheme>()!.bodyMM,
-        ),
+        child: widget.isLoadingState
+            ? CircularProgressIndicator(
+                backgroundColor:
+                    Theme.of(context).extension<CustomColorTheme>()!.icon1!,
+                color: Theme.of(context)
+                    .extension<CustomColorTheme>()!
+                    .reverseTextColor!,
+              )
+            : Text(
+                widget.text,
+                style: widget.textStyle ??
+                    Theme.of(context).extension<CustomTextTheme>()!.bodyMM,
+              ),
       ),
     );
   }

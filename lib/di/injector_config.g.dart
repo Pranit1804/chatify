@@ -26,8 +26,8 @@ class _$InjectorConfig extends InjectorConfig {
   @override
   void _configureRepositories() {
     final KiwiContainer container = KiwiContainer();
-    container.registerFactory<AuthRepository>(
-        (c) => AuthRepositoryImpl(c<AuthRemoteDataSource>()));
+    container.registerFactory<AuthRepository>((c) => AuthRepositoryImpl(
+        c<AuthRemoteDataSource>(), c<AuthLocalDataSource>()));
   }
 
   @override

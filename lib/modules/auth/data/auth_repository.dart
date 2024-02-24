@@ -4,5 +4,6 @@ import 'package:firebase_auth/firebase_auth.dart';
 
 abstract class AuthRepository {
   Future<UserCredential> signupUser(UserRequestModel userRequestModel);
-  Future<UserEntity> createUser(UserCredential userCredential);
+  Future<void> createUser(UserEntity user);
+  Future<UserEntity> login(UserRequestModel userRequestModel);
 }

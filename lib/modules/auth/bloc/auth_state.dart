@@ -15,3 +15,10 @@ class SignupUserSuccessState extends AuthState {
 }
 
 class SignupUserFailureState extends AuthState {}
+
+class LoginUserSuccessState extends AuthState {
+  UserEntity userEntity;
+  LoginUserSuccessState(this.userEntity);
+}
+
+class LoginUserFailureState extends AuthState {}

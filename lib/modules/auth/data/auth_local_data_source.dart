@@ -1,1 +1,15 @@
-class AuthLocalDataSource {}
+import 'package:chatify/local_database/object_box.dart';
+import 'package:chatify/modules/auth/domain/entities/user_entity.dart';
+import 'package:objectbox/objectbox.dart';
+
+class AuthLocalDataSource {
+  void storeUserEntity(UserEntity user) {
+    Box<UserEntity> userBox = ObjectBox.getUserEntity();
+    userBox.removeAll();
+    userBox.put(user);
+  }
+
+  UserEntity getUserEntity() {
+    return ObjectBox.getUserEntity().getAll()[0];
+  }
+}

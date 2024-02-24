@@ -1,3 +1,4 @@
+import 'package:chatify/common/utils/app_utils.dart';
 import 'package:chatify/modules/auth/data/auth_repository.dart';
 import 'package:chatify/modules/auth/data/models/user_request_model.dart';
 import 'package:chatify/modules/auth/domain/entities/user_entity.dart';
@@ -11,10 +12,21 @@ class AuthUseCase {
   Future<UserEntity> signupUser(UserRequestModel userRequestModel) async {
     UserCredential userCredential =
         await _authRepository.signupUser(userRequestModel);
-    return await createUser(userCredential);
+    UserEntity user = UserEntity(
+      userCredential.user!.uid,
+      userRequestModel.username!,
+      userRequestModel.email,
+      AppUtils.getRandomString(5),
+    );
+    await createUser(user);
+    return user;
   }
 
-  Future<UserEntity> createUser(UserCredential userCredential) {
-    return _authRepository.createUser(userCredential);
+  Future<void> createUser(UserEntity user) {
+    return _authRepository.createUser(user);
+  }
+
+  Future<UserEntity> login(UserRequestModel userRequestModel) {
+    return _authRepository.login(userRequestModel);
   }
 }

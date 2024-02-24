@@ -7,3 +7,9 @@ class SignupUserEvent extends AuthEvent {
 
   SignupUserEvent(this.userRequestModel);
 }
+
+class LoginUserEvent extends AuthEvent {
+  final UserRequestModel userRequestModel;
+
+  LoginUserEvent(this.userRequestModel);
+}
