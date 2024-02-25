@@ -5,11 +5,11 @@ class UserStore {
   static final AuthLocalDataSource _authLocalDataSource = AuthLocalDataSource();
   UserStore._();
 
-  static UserEntity getUser() {
+  static UserEntity? getUser() {
     return _authLocalDataSource.getUserEntity();
   }
 
-  static getUserId() {
-    return _authLocalDataSource.getUserEntity().userId;
+  static String? getUserId() {
+    return _authLocalDataSource.getUserEntity()?.userId;
   }
 }

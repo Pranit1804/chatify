@@ -21,6 +21,8 @@ class AuthConstants {
   static const emailAlreadyUsedError =
       'The account already exists for that email.';
   static const noUserFound = 'No user found for that email.';
+  static const noUserFoundForInviteCode = 'No user found for that Invite code.';
+
   static const userNotFound = 'user-not-found';
   static const wrongPasswordError = 'Wrong password provided for that user.';
   static const wrongPassword = '  wrong-password';

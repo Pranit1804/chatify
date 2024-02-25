@@ -9,7 +9,8 @@ class AuthLocalDataSource {
     userBox.put(user);
   }
 
-  UserEntity getUserEntity() {
-    return ObjectBox.getUserEntity().getAll()[0];
+  UserEntity? getUserEntity() {
+    List<UserEntity> users = ObjectBox.getUserEntity().getAll();
+    return users.isNotEmpty ? ObjectBox.getUserEntity().getAll()[0] : null;
   }
 }
