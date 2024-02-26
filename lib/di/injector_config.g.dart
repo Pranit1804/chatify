@@ -16,7 +16,9 @@ class _$InjectorConfig extends InjectorConfig {
           authencationUseCase: c<AuthUseCase>(),
           snackbarBloc: c<SnackbarBloc>()))
       ..registerFactory((c) => HomeBloc(
-          homeUseCase: c<HomeUseCase>(), snackbarBloc: c<SnackbarBloc>()));
+          homeUseCase: c<HomeUseCase>(), snackbarBloc: c<SnackbarBloc>()))
+      ..registerFactory((c) => ChatBloc(
+          chatUseCase: c<ChatUseCase>(), snackbarBloc: c<SnackbarBloc>()));
   }
 
   @override
@@ -24,7 +26,8 @@ class _$InjectorConfig extends InjectorConfig {
     final KiwiContainer container = KiwiContainer();
     container
       ..registerFactory((c) => AuthUseCase(c<AuthRepository>()))
-      ..registerFactory((c) => HomeUseCase(c<HomeRepository>()));
+      ..registerFactory((c) => HomeUseCase(c<HomeRepository>()))
+      ..registerFactory((c) => ChatUseCase(c<ChatRepository>()));
   }
 
   @override
@@ -34,7 +37,9 @@ class _$InjectorConfig extends InjectorConfig {
       ..registerFactory<AuthRepository>((c) => AuthRepositoryImpl(
           c<AuthRemoteDataSource>(), c<AuthLocalDataSource>()))
       ..registerFactory<HomeRepository>((c) => HomeRepositoryImpl(
-          c<HomeRemoteDataSource>(), c<HomeLocalDataSource>()));
+          c<HomeRemoteDataSource>(), c<HomeLocalDataSource>()))
+      ..registerFactory<ChatRepository>((c) => ChatRepositoryImpl(
+          c<ChatRemoteDataSource>(), c<ChatLocalDataSource>()));
   }
 
   @override
@@ -42,7 +47,8 @@ class _$InjectorConfig extends InjectorConfig {
     final KiwiContainer container = KiwiContainer();
     container
       ..registerFactory((c) => AuthRemoteDataSource())
-      ..registerFactory((c) => HomeRemoteDataSource());
+      ..registerFactory((c) => HomeRemoteDataSource())
+      ..registerFactory((c) => ChatRemoteDataSource());
   }
 
   @override
@@ -50,6 +56,7 @@ class _$InjectorConfig extends InjectorConfig {
     final KiwiContainer container = KiwiContainer();
     container
       ..registerFactory((c) => AuthLocalDataSource())
-      ..registerFactory((c) => HomeLocalDataSource());
+      ..registerFactory((c) => HomeLocalDataSource())
+      ..registerFactory((c) => ChatLocalDataSource());
   }
 }

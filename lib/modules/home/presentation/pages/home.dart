@@ -79,24 +79,33 @@ class _HomeState extends State<Home> {
   }
 
   Widget _singlePersonTile(UserEntity friend) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.start,
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        const ProfileIcon(),
-        SizedBox(width: LayoutConstants.dimen_10.w),
-        Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            SizedBox(height: LayoutConstants.dimen_5.h),
-            Text(
-              friend.username,
-              style: Theme.of(context).extension<CustomTextTheme>()!.bodyXLM,
-            ),
-          ],
-        )
-      ],
+    return GestureDetector(
+      onTap: () {
+        Navigator.pushNamed(
+          context,
+          RoutesConstants.chat,
+          arguments: friend,
+        );
+      },
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          const ProfileIcon(),
+          SizedBox(width: LayoutConstants.dimen_10.w),
+          Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              SizedBox(height: LayoutConstants.dimen_5.h),
+              Text(
+                friend.username,
+                style: Theme.of(context).extension<CustomTextTheme>()!.bodyXLM,
+              ),
+            ],
+          )
+        ],
+      ),
     );
   }
 }

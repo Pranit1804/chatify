@@ -9,4 +9,5 @@ class RoutesConstants {
   static const signUp = '/signUp';
   static const home = '/home';
   static const shareInviteScreen = '/shareInviteScreen';
+  static const chat = '/chat';
 }
