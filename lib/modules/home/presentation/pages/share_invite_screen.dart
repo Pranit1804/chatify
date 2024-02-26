@@ -12,6 +12,7 @@ import 'package:chatify/modules/home/home_constants.dart';
 import 'package:chatify/routes/routes_constant.dart';
 import 'package:chatify/widgets/common_text_field.dart';
 import 'package:chatify/widgets/primary_button.dart';
+import 'package:clipboard/clipboard.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -127,8 +128,16 @@ class _ShareInviteState extends State<ShareInvite> {
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            textWithIconWidget(HomeConstants.copyToClipboard, Icons.copy),
-            textWithIconWidget(HomeConstants.share, Icons.share),
+            GestureDetector(
+                onTap: () async {
+                  await FlutterClipboard.copy(userEntity.inviteCode);
+                  ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+                    content: Text("Copied to clipboard"),
+                  ));
+                },
+                child: textWithIconWidget(
+                    HomeConstants.copyToClipboard, Icons.copy)),
+            // textWithIconWidget(HomeConstants.share, Icons.share),
           ],
         ),
       ],
