@@ -32,4 +32,8 @@ class ObjectBox {
   }
 
   static Box<UserEntity> getUserEntity() => _userEntityBox;
+
+  static void clear() {
+    _userEntityBox.removeAll();
+  }
 }

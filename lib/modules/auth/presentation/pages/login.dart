@@ -162,6 +162,7 @@ class _LoginState extends State<Login> {
         CustomTextField(
           hintText: AuthConstants.password,
           textController: _passwordTextController,
+          obscureText: true,
         ),
       ],
     );

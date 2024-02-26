@@ -35,10 +35,16 @@ class HomeRemoteDataSource {
     return friends;
   }
 
-  Future<void> addFriend(String userId, UserEntity user) async {
+  Future<void> addFriend(UserEntity user, UserEntity friend) async {
     await _friends
-        .doc(userId)
-        .collection(userId)
+        .doc(user.userId)
+        .collection(user.userId)
+        .doc(friend.userId)
+        .set(friend.toJson());
+
+    await _friends
+        .doc(friend.userId)
+        .collection(friend.userId)
         .doc(user.userId)
         .set(user.toJson());
   }

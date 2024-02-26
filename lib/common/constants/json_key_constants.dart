@@ -6,9 +6,9 @@ class JsonKeyConstants {
   static const String password = 'password';
   static const String id = 'id';
   static const String inviteCode = 'inviteCode';
-  static const String toId = 'toId';
+  static const String recieverId = 'recieverId';
   static const String message = 'message';
-  static const String fromId = 'fromId';
+  static const String senderId = 'senderId';
   static const String read = 'read';
-  static const String sent = 'sent';
+  static const String createdAt = 'createdAt';
 }

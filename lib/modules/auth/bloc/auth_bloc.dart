@@ -1,4 +1,5 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
+import 'package:chatify/local_database/object_box.dart';
 import 'package:chatify/modules/auth/auth_constants.dart';
 import 'package:chatify/modules/auth/data/models/user_request_model.dart';
 import 'package:chatify/modules/auth/domain/entities/auth_use_case.dart';
@@ -21,6 +22,13 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
         super(AuthInitialState()) {
     on<SignupUserEvent>(_onSignupUserEvent);
     on<LoginUserEvent>(_onLoginUserEvent);
+    on<LogoutUserEvent>(_onLogout);
+  }
+
+  void _onLogout(LogoutUserEvent event, Emitter emit) {
+    try {
+      ObjectBox.clear();
+    } catch (e) {}
   }
 
   void _onLoginUserEvent(LoginUserEvent event, Emitter emit) async {

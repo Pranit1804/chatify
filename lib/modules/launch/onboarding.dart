@@ -100,6 +100,10 @@ class _OnboardingState extends State<Onboarding> {
         Navigator.pushNamed(context, RoutesConstants.signUp);
       },
       text: LaunchConstants.signUpWithMail,
+      textStyle: Theme.of(context)
+          .extension<CustomTextTheme>()!
+          .bodyMM!
+          .copyWith(color: AppColor.ravenText),
     );
   }
 

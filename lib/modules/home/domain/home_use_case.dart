@@ -10,8 +10,8 @@ class HomeUseCase {
     return _homeRepository.getUserByInviteCode(inviteCode);
   }
 
-  Future<void> addFriend(String userId, UserEntity user) async {
-    _homeRepository.addFriend(userId, user);
+  Future<void> addFriend(UserEntity user, UserEntity friend) async {
+    _homeRepository.addFriend(user, friend);
   }
 
   Future<List<UserEntity>> getAllFriends(String userId) async {

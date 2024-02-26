@@ -171,6 +171,7 @@ class _SignUpState extends State<SignUp> {
         CustomTextField(
           hintText: AuthConstants.password,
           textController: _passwordTextController,
+          obscureText: true,
         ),
       ],
     );

@@ -9,6 +9,7 @@ import 'package:flutter/material.dart';
 class CustomTextField extends StatelessWidget {
   final TextEditingController textController;
   final String? hintText;
+  final bool obscureText;
 
   final Function(String)? onChanged;
 
@@ -17,6 +18,7 @@ class CustomTextField extends StatelessWidget {
     required this.textController,
     this.hintText,
     this.onChanged,
+    this.obscureText = false,
   }) : super(key: key);
 
   @override
@@ -42,6 +44,7 @@ class CustomTextField extends StatelessWidget {
                 children: [
                   Expanded(
                     child: TextFormField(
+                      obscureText: obscureText,
                       onChanged: onChanged,
                       cursorHeight: 16,
                       controller: textController,

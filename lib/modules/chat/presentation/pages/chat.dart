@@ -2,11 +2,16 @@ import 'package:chatify/common/constants/layout_constants.dart';
 import 'package:chatify/common/extensions/screen_utils_extensions.dart';
 import 'package:chatify/common/theme/new_theme/color_theme/custom_color_theme_extension.dart';
 import 'package:chatify/common/theme/new_theme/text_theme/custom_text_theme_extension.dart';
+import 'package:chatify/common/utils/app_utils.dart';
 import 'package:chatify/di/injector.dart';
+import 'package:chatify/local_database/user_store.dart';
 import 'package:chatify/modules/auth/domain/entities/user_entity.dart';
 import 'package:chatify/modules/chat/bloc/chat_bloc.dart';
+import 'package:chatify/modules/chat/data/models/chat_model.dart';
+import 'package:chatify/modules/chat/presentation/widgets/chat_bubbles.dart';
 import 'package:chatify/widgets/pop_button.dart';
 import 'package:chatify/widgets/profile_icon_widget.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
 class Chat extends StatefulWidget {
@@ -36,6 +41,8 @@ class _ChatState extends State<Chat> {
       body: Container(
         padding: const EdgeInsets.all(LayoutConstants.dimen_16),
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Row(
               children: [
@@ -55,6 +62,33 @@ class _ChatState extends State<Chat> {
                 ),
               ],
             ),
+            SizedBox(height: LayoutConstants.dimen_20.w),
+            StreamBuilder(
+                stream: FirebaseFirestore.instance
+                    .collection(
+                        'chats/${AppUtils.getConversationID(UserStore.getUser()!, widget.friend.userId)}/messages/')
+                    .snapshots(),
+                builder: (context, snapshot) {
+                  final List<ChatModel> chats = snapshot.data?.docs
+                          .map((e) => ChatModel.fromJson(e.data()))
+                          .toList() ??
+                      [];
+                  if (chats.isNotEmpty) {
+                    chats.sort((a, b) => a.createdAt.compareTo(b.createdAt));
+                    return ListView.builder(
+                      itemCount: chats.length,
+                      shrinkWrap: true,
+                      itemBuilder: (context, index) => Padding(
+                        padding:
+                            EdgeInsets.only(top: LayoutConstants.dimen_8.h),
+                        child: ChatsBubble(chat: chats[index]),
+                      ),
+                    );
+                  } else {
+                    return const Expanded(
+                        child: Center(child: Text('Say Hii!!')));
+                  }
+                }),
             const Spacer(),
             sendMessageWidget(),
           ],
@@ -69,6 +103,7 @@ class _ChatState extends State<Chat> {
         SendMessageEvent(
             reciever: widget.friend, message: _messageController.text),
       );
+      _messageController.clear();
     }
   }
 

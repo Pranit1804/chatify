@@ -14,8 +14,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class App extends StatefulWidget {
-  const App({super.key});
+  App({Key? key}) : super(key: mtAppGlobalKey);
   static GlobalKey<_AppState> mtAppKey = GlobalKey();
+  static GlobalKey<_AppState> mtAppGlobalKey = GlobalKey();
 
   @override
   State<App> createState() => _AppState();
@@ -42,6 +43,16 @@ class _AppState extends State<App> {
         return getApp();
       },
     );
+  }
+
+  changeThemeMode(ThemeMode newTheme) {
+    setState(() {
+      _themeMode = newTheme;
+    });
+  }
+
+  ThemeMode getThemeMode() {
+    return _themeMode;
   }
 
   MaterialApp getApp() {

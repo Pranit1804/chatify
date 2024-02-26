@@ -6,4 +6,5 @@ class HomeConstants {
   static const enterFriendsId = "Enter your Friends's Invite code";
   static const enterIDHint = 'Enter Invite code';
   static const addFriend = 'Add Friend';
+  static const String clickToAdd = 'Click on + button to add friends';
 }

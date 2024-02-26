@@ -36,7 +36,7 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
       UserEntity? user =
           await _homeUseCase.getUserByInviteCode(event.inviteCode);
       if (user != null) {
-        await _homeUseCase.addFriend(UserStore.getUserId()!, user);
+        await _homeUseCase.addFriend(UserStore.getUser()!, user);
         emit(AddFriendSuccessState());
       } else {
         _snackbarBloc.add(

@@ -15,8 +15,8 @@ class HomeRepositoryImpl extends HomeRepository {
   }
 
   @override
-  Future<void> addFriend(String userId, UserEntity user) async {
-    await _homeRemoteDataSource.addFriend(userId, user);
+  Future<void> addFriend(UserEntity user, UserEntity friend) async {
+    await _homeRemoteDataSource.addFriend(user, friend);
   }
 
   @override

@@ -26,11 +26,11 @@ class ChatBloc extends Bloc<ChatEvent, ChatState> {
     try {
       UserEntity user = UserStore.getUser()!;
       ChatModel message = ChatModel(
-        toId: user.userId,
+        recieverId: event.reciever.userId,
         message: event.message,
         read: "",
-        fromId: event.reciever.userId,
-        sent: "",
+        senderId: user.userId,
+        createdAt: DateTime.now(),
       );
       _chatUseCase.sendMessage(message, user, event.reciever);
     } catch (e) {

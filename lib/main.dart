@@ -14,5 +14,5 @@ void main() async {
 
   InjectorConfig.setUp();
   await ObjectBox.create();
-  runApp(const App());
+  runApp(App());
 }

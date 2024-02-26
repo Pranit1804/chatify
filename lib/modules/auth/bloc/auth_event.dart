@@ -13,3 +13,5 @@ class LoginUserEvent extends AuthEvent {
 
   LoginUserEvent(this.userRequestModel);
 }
+
+class LogoutUserEvent extends AuthEvent {}
